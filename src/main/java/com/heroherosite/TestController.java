@@ -2,16 +2,13 @@ package com.heroherosite;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class TestController {
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	@ResponseBody
+	@RequestMapping("/")
 	public String index() {
-		return "herro world";
-	}
 
+		return  "index";
+	}
 }
