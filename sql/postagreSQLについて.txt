@@ -1,0 +1,8 @@
+詳しくは下記URL参照
+https://ksby.hatenablog.com/entry/2015/04/12/113912
+
+postgreSQLをHibernateで使用した場合、初期化時にcreateClob APIのcreateClog()を実行するが、この時にSQLFeatureNotSupportedExceptionが発生してしまう。
+PostgreSQLにはCLOB型は無いため当然の結果であり、例外発生時には使用しないようになっている。
+しかしExceptionがコンソールに出っぱなしになって気持ち悪いので、設定ファイルを下記の場所に置くことで解決できる
+
+src/main/resources/hibernate.properties
