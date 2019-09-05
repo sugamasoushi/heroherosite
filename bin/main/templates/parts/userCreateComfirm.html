@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="userCreateComfirm">
+<head>
+<title>UserCreateConfirm画面</title>
+</head>
+<body>
+	
+	<div id="main">
+		<div id="top">
+			<p>UserCreateConfirm</p>
+		</div>
+		<div>
+			<h3>登録する内容は以下でよろしいですか。</h3>
+			<table>
+				<form action="/userCreateCompleteAction">
+					<tr id="box">
+						<td><label>ログインID:</label></td>
+						<td th:text="${session.newlogin_id}"></td>
+					</tr>
+					<tr id="box">
+						<td><label>ログインPASS:</label></td>
+						<td th:text="${session.newlogin_pass}"></td>
+					</tr>
+					<tr id="box">
+						<td><label>ユーザー名:</label></td>
+						<td th:text="${session.newuser_name}"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="完了"/></td>
+					</tr>
+				</form>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

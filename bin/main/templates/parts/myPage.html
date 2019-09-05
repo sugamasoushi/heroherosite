@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="myPage">
+<head>
+</head>
+<body>
+	<div id="main">
+		<div id="top">
+			<p>MyPage</p>
+		</div>
+		
+		<div th:if="${Login}">
+			
+			<h3>購入情報</h3>
+			<table border="1">
+			<tr>
+				<th>商品名</th>
+				<th>値段</th>
+				<th>購入個数</th>
+				<th>支払方法</th>
+				<th>購入日</th>
+			</tr>
+				<tr th:each="obj : ${mypagelist}">
+					<td th:text="${obj.item_name}"></td>
+					<td th:text="${obj.item_price}"><span>円</span></td>
+					<td th:text="${obj.total_count}"><span>個</span></td>
+					<td th:text="${obj.pay}"></td>
+					<td th:text="${obj.insert_date}"></td>
+				</tr>
+			</table>
+			<form action="/myPageDelete" method="get">
+				<input type="submit" value="履歴削除">
+			</form>
+		</div>
+	
+		<div th:unless="${Login}" >
+			<div th:replace="~{/parts/login :: login}"></div>
+
+		</div>
+		
+	</div>
+</body>
+</html>

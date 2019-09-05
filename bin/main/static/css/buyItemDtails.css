@@ -1,0 +1,14 @@
+
+#main .left{
+	display:inline-block;
+	width:100px;
+}
+#main .center{
+display:inline-block;
+	width:300px;
+}
+#main .right{
+display:inline-block;
+	width:100px;
+	height:100%;
+}

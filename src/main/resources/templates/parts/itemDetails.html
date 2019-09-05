@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="ItemDetails">
+
+<head>
+
+<link th:href="@{/css/buyItemDtails.css}" rel="stylesheet"></link>
+<title th:text="${title}"></title>
+
+
+
+</head>
+<body>
+	
+	<div id="main">
+		<div id="top">
+			<p>BuyItemDetails</p>
+		</div>
+		<div class="left">
+				画像
+		</div>
+		<div class="center">
+			<table th:object="${ItemDetails}">
+				<tr>
+					<th>商品名</th>
+					<td th:text="*{item_name}"></td>
+				</tr>
+				<tr>
+					<th>値段</th>
+					<td th:text="*{item_price}"></td>
+				</tr>
+				<tr>
+					<th>在庫</th>
+					<td th:text="*{item_stock}"></td>
+				</tr>
+				<tr>
+					<th>説明</th>
+					<td th:text="${ItemDetails.product_description}">プロパティはどちらの出力でも良い</td>
+				</tr>
+				<tr>
+					<th>発売会社</th>
+					<td th:text="${ItemDetails.release_company}"></td>
+				</tr>
+				<tr>
+					<th>発売日</th>
+					<td th:text="${ItemDetails.redist_date}"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="right">
+			<form action="/AddCart" method="post">
+					<select name="itemcount" >
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+					<input type="submit" value="カートへ追加、その内javascript化" onClick="AddCart(); return false;">
+					<input type="hidden" name="itemdetailID" th:value="${ItemDetails.product_id}">
+				</form>
+		</div>
+	</div>
+</body>
+</html>

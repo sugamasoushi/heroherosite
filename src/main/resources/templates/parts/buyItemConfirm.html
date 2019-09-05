@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="BuyItemConfirm">
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function submitAction(url){
+		$('form').attr('action',url);
+		$('form').submit();
+	}
+</script>
+
+</head>
+<body>
+	<div id="main">
+		<div id="top">
+			<p>BuyItemConfirm</p>
+		</div>
+
+		<div th:if="${Login}">
+			<form action="/BuyItemAction" method="post">
+				
+				<tr>
+					<td>支払い方法</td>
+					<td><input type="radio" id="radio1" name="pay" value="genkin"><label for="radio1">現金</label></td>
+					<td><input type="radio" id="radio2" name="pay" value="card"checked="checked"><label for="radio2">クレジットカード</label></td>
+				</tr>
+				<tr>
+					<td><br></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="戻る" onclick="submitAction('/cartinfo')"/></td>
+					<td><input type="button" value="完了" onclick="submitAction('/buyItemComplete')"/></td>
+				</tr>
+			</form>
+		<table>
+			<tr>
+				<th>画像</th>
+				<th>商品名</th>
+				<th>値段</th>
+				<th>購入個数</th>
+				<th>小計</th>
+			</tr>
+				<tr th:each="obj : ${cartinfo}">
+					<td th:text="${obj.image_file_name}" /></td>
+					<td th:text="${obj.item_name}" /></td>
+					<td th:text="${obj.item_price}" /></td>
+					<td th:text="${obj.product_count}" /></td>
+					<td th:text="${obj.item_price}*${obj.product_count}" /></td>
+				</tr>
+			<h2 th:text="'カート合計金額：'+${carttotalprice}" ></h2>
+			
+		</table>
+		</div>
+		
+		<div th:unless="${Login}" >
+			<div th:replace="~{/parts/login :: login}"></div>
+		</div>
+		
+	</div>
+</body>
+</html>

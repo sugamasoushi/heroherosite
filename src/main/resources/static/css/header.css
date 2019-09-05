@@ -1,0 +1,83 @@
+@CHARSET "UTF-8";
+
+body{
+	width:100%;
+	min-width:1000px;
+	margin:0;
+	padding:0;
+	line-height:1.6;
+	letter-spacing:1px;
+	font-familly:Verdana,Helvetica,sans-serif;
+	font-size:12px;
+	color:#333;
+	backgtound:#fff;
+
+}
+table {
+	text-align:center;
+	margin:0 auto;
+}
+
+/*=======================ID LAYOUT===================*/
+#header a { text-decoration: none;}
+#header a:link { color: white; }
+#header a:visited { color: skyblue; }
+
+#footer a { text-decoration: none;}
+#footer a:link { color: white; }
+#footer a:visited { color: white; }
+/*リンク色指定
+a:link { color: #0000ff; } … 未訪問のリンク
+a:visited { color: #000080; } … 訪問済みのリンク
+a:hover { color: #ff0000; } … ポイント時のリンク
+a:active { color: #ff8000; } … 選択中のリンク*/
+
+#header{
+	width:100%;
+	height:80px;
+	background-color:black;
+	text-align:center;
+	font-size: 0;
+}
+#header .container{
+	width:1000px;
+	height:100%;
+	margin: 0 auto;
+	font-size: 0;
+}
+#header .container .left-title{
+	width:250px;
+	color:white;
+	font-size:50px;
+	display:inline-block;
+}
+#header .container .right-menu{
+	font-size: 0;
+	width:700px;
+	display:inline-block;
+}
+#header ul{
+	font-size: 0;
+	text-align:right
+}
+.right-menu ul li{
+	display:inline-block;
+	color:white;
+	font-size: 15px;
+	padding-right:40px;
+}
+
+#footer{
+	width:100%;
+	height:80px;
+	color: white;
+	background-color:black;
+	text-align:center;
+}
+
+#footer ul li{
+	display:inline-block;
+	color:white;
+	font-size: 15px;
+	padding-right:40px;
+}

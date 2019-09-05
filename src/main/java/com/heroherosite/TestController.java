@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class TestController{
-    @RequestMapping("/")
+    @RequestMapping("/test")
     public ModelAndView index(ModelAndView mav) {
     	
     	mav.setViewName("index");

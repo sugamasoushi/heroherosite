@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="login">
+<head>
+</head>
+<body>
+	<div id="main">
+		<div id="top">
+			<p>Login</p>
+		</div>
+		<div>
+			<h3>ユーザーIDとパスワードの入力</h3>
+			<table>
+			<form action="/loginAction" method="post">
+				<tr>
+					<td><label>ユーザーID：</label></td>
+					<td><input type="text" name="loginUserId" th:value="${loginid}"/></td>
+				</tr>
+				<tr>
+					<td><label>パスワード：</label></td>
+					<td><input type="text" name="loginPassword" th:value="${loginpass}"/></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="ログイン"></td>
+				</tr>
+			</form>
+			</table>
+			<br>
+			<div id="text-link">
+				<p>新規ユーザー登録は
+					<a th:href="@{'/usercreate'}">こちら</a></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

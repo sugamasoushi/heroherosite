@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="footer">
+<!--/*  th:fragment="frag_body" でこのページ全体をフラグメントにする */-->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<link href="/css/header.css" th:href="@{/css/header.css}" rel="stylesheet"></link>
+
+</head>
+<body>
+
+	<div id="footer">
+		© 2019 StudySiteZ Corporation.
+			<ul>
+				<li><a th:href="@{'/usercreate'}">新規登録</a></li>
+				<li><a th:href="@{'/question'}">お問い合わせ</a></li>
+				<li><a th:href="@{'/item'}">利用規約</a></li>
+				<li><a th:href="@{'/question'}">プライバシー</a></li>
+			</ul>
+	</div>
+
+</body>
+</html>

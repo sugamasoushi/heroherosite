@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="header">
+<!--/*  th:fragment="frag_body" でこのページ全体をフラグメントにする */-->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+<link href="/css/header.css" th:href="@{/css/header.css}" rel="stylesheet"></link>
+
+	<!--/*  <style th:fragment="frag_style">
+#header{
+		border:solid 3px skyblue;
+		padding:0px 20px;
+	}
+th:fragmentでこの「タグ」をフラグメントにする、この場合、styleタグ内のみを他HTMLへ適用できる
+	これはdivタグにも適用できるが、cssの読み込みはされないため、デザイン済みのページを丸ごと適用したい場合は<html>タグに
+	th:fragmentを指定する必要がある 
+</style>*/-->
+
+</head>
+<body>
+<div>
+	<div id="header">
+		<div class="container">
+			<div class="left-title">StudySiteZ</div>
+		<div class="right-menu">
+	
+			<ul>
+				<li><a th:href="@{'/'}">TOP</a></li>
+				<li><a th:href="@{'/itemlist'}">商品一覧</a></li>	
+				<li><a th:href="@{'/cartinfo'}">カート</a></li>
+				<li><a th:href="@{'/myPage'}">マイページ</a></li>
+				<li><a th:href="@{'/keijiban'}">掲示板</a></li>
+				<li>
+				<p th:if="${session.loginUserId}"><a th:href="@{'/logout'}">ログアウト</a></p>
+				<p th:unless="${session.loginUserId}"><a th:href="@{'/login'}">ログイン</a></p>
+				</li>
+			</ul>
+			
+		</div>
+		</div>
+		</div>
+</div>
+
+</body>
+</html>
