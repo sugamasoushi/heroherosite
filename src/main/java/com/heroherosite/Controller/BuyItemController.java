@@ -33,7 +33,7 @@ public class BuyItemController {
 	@RequestMapping(value="/ItemDetails",method = RequestMethod.POST)
 	public ModelAndView ItemDetails(ModelAndView mav,
 			@RequestParam("itemdetailID")int product_id) {
-		mav.setViewName("/index");
+		mav.setViewName("index");
 		mav.addObject("title","商品詳細");
 		mav.addObject("msg","ITEMDETAILS");
 		
@@ -64,7 +64,7 @@ public class BuyItemController {
 			mav.addObject("Login",false);
 		}
 
-		mav.setViewName("/index");
+		mav.setViewName("index");
 		mav.addObject("title","決済確認画面");
 		mav.addObject("msg","BUYITEMCONFIRM");
 	
@@ -91,7 +91,7 @@ public class BuyItemController {
 		}
 		
 		cartrepo.DeleteCartAll(userId);
-		mav.setViewName("/index");
+		mav.setViewName("index");
 		mav.addObject("title","決済完了");
 		mav.addObject("msg","BUYITEMCOMPLETE");
 		
