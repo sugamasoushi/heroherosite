@@ -28,7 +28,7 @@ public class LoginUserEntity {
 //	private boolean loginFlg = false;
 	
 	private Date insert_date;
-	private Date updated_date;
+	private Date update_date;
 	
 	public int getId() {
 		return id;
@@ -73,11 +73,11 @@ public class LoginUserEntity {
 	public void setInsert_date(Date insert_date) {
 		this.insert_date = insert_date;
 	}
-	public Date getUpdated_date() {
-		return updated_date;
+	public Date getUpdate_date() {
+		return update_date;
 	}
-	public void setUpdated_date(Date update_date) {
-		this.updated_date = update_date;
+	public void setUpdate_date(Date update_date) {
+		this.update_date = update_date;
 	}
 	
 	

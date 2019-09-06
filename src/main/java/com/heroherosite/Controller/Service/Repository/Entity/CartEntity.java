@@ -25,7 +25,7 @@ public class CartEntity {
 	private int product_count;
 	private int item_price;
 
-	private Date redist_date;
+	private Date insert_date;
 	private Date update_date;
 	
 	public int getId() {
@@ -52,11 +52,11 @@ public class CartEntity {
 	public void setProduct_count(int product_count) {
 		this.product_count = product_count;
 	}
-	public Date getRedist_date() {
-		return redist_date;
+	public Date getInsert_date() {
+		return insert_date;
 	}
-	public void setRedist_date(Date redist_date) {
-		this.redist_date = redist_date;
+	public void setInsert_date(Date insert_date) {
+		this.insert_date = insert_date;
 	}
 	public Date getUpdate_date() {
 		return update_date;

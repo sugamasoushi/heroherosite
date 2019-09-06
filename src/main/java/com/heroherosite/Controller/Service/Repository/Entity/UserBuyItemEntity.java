@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity	//エンティティクラスであることを示す
-@Table(name="user_buy_item_transacton")
+@Table(name="user_buy_item_transanction")
 public class UserBuyItemEntity {
 	
 	@Id
@@ -24,7 +24,7 @@ public class UserBuyItemEntity {
 	private String user_master_id;
 	private String pay;
 	private Date insert_date;
-	private Date delete_date;
+	private Date update_date;
 	
 	public int getId() {
 		return id;
@@ -68,11 +68,11 @@ public class UserBuyItemEntity {
 	public void setInsert_date(Date insert_date) {
 		this.insert_date = insert_date;
 	}
-	public Date getDelete_date() {
-		return delete_date;
+	public Date getUpdate_date() {
+		return update_date;
 	}
-	public void setDelete_date(Date delete_date) {
-		this.delete_date = delete_date;
+	public void setUpdate_date(Date update_date) {
+		this.update_date = update_date;
 	}
 	
 	

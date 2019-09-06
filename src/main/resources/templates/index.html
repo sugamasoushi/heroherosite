@@ -19,12 +19,6 @@
 	<p th:text="${session.loginmsg}">
 		<div class="top" >
 			<div th:case="HOME">
-				<img id="player" src="img/player.png">
-				<img id="enemy" src="img/enemy.png">
-				<img id="player_bullet" src="img/player_bullet.png">
-				<img id="enemy_bullet" src="img/enemy_bullet.png">
-				<canvas id="screen" width='240' height='320'></canvas>
-				<script src="js/shooting.js"></script>
 				<img src="/photo/jQuery_image2.jpg">
 			</div>
 			<div th:case="ITEMLIST"><div th:replace="~{parts/itemList :: itemlist}"></div></div>
@@ -39,6 +33,7 @@
 			<div th:case="BUYITEMCONFIRM"><div th:replace="~{parts/buyItemConfirm :: BuyItemConfirm}"></div></div>
 			<div th:case="BUYITEMCOMPLETE"><div th:replace="~{parts/buyItemComplete :: BuyItemComplete}"></div></div>
 			
+			<div th:case="SONOTA"><div th:replace="~{parts/sonota :: sonota}"></div></div>
 			
 		</div>
 	</div>

@@ -11,6 +11,8 @@
 		<div th:if="${Login}">
 			
 			<h3>購入情報</h3>
+			<div th:if="${nakami}">
+			
 			<table border="1">
 			<tr>
 				<th>商品名</th>
@@ -31,9 +33,16 @@
 				<input type="submit" value="履歴削除">
 			</form>
 		</div>
+		
+		<div th:unless="${nakami}" >
+			<h1>なんか買ってけ</h1>	
+		</div>
+
+		</div>
+		
 	
 		<div th:unless="${Login}" >
-			<div th:replace="~{/parts/login :: login}"></div>
+			<div th:replace="~{parts/login.html :: login}"></div>
 
 		</div>
 		

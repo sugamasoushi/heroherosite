@@ -23,7 +23,7 @@ th:fragmentでこの「タグ」をフラグメントにする、この場合、
 <div>
 	<div id="header">
 		<div class="container">
-			<div class="left-title">StudySiteZ</div>
+			<div class="left-title">HeroHeroSite</div>
 		<div class="right-menu">
 	
 			<ul>
@@ -31,11 +31,11 @@ th:fragmentでこの「タグ」をフラグメントにする、この場合、
 				<li><a th:href="@{'/itemlist'}">商品一覧</a></li>	
 				<li><a th:href="@{'/cartinfo'}">カート</a></li>
 				<li><a th:href="@{'/myPage'}">マイページ</a></li>
-				<li><a th:href="@{'/keijiban'}">掲示板</a></li>
 				<li>
 				<p th:if="${session.loginUserId}"><a th:href="@{'/logout'}">ログアウト</a></p>
 				<p th:unless="${session.loginUserId}"><a th:href="@{'/login'}">ログイン</a></p>
 				</li>
+				<li><a th:href="@{'/sonota'}">その他</a></li>
 			</ul>
 			
 		</div>
