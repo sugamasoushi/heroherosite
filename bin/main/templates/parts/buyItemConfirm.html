@@ -2,12 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org" th:fragment="BuyItemConfirm">
 <head>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
-	function submitAction(url){
-		$('form').attr('action',url);
-		$('form').submit();
-	}
+function CART_ACTION(){
+    document.getElementById('form').action="/cartinfo";
+}
+function BUY_ACTION(){
+    document.getElementById('form').action="/buyItemComplete";
+}
 </script>
 
 </head>
@@ -18,7 +19,7 @@
 		</div>
 
 		<div th:if="${Login}">
-			<form action="/BuyItemAction" method="post">
+			<form action="" method="post" id='form' name='form'>
 				
 				<tr>
 					<td>支払い方法</td>
@@ -29,8 +30,8 @@
 					<td><br></td>
 				</tr>
 				<tr>
-					<td><input type="button" value="戻る" onclick="submitAction('/cartinfo')"/></td>
-					<td><input type="button" value="完了" onclick="submitAction('/buyItemComplete')"/></td>
+					<td><input type="submit" value="戻る" onclick="CART_ACTION();"/></td>
+					<td><input type="submit" value="完了" onclick="BUY_ACTION();"/></td>
 				</tr>
 			</form>
 		<table>
@@ -54,7 +55,7 @@
 		</div>
 		
 		<div th:unless="${Login}" >
-			<div th:replace="~{parts/login.html :: login}"></div>
+			<div th:replace="~{parts/login :: login}"></div>
 		</div>
 		
 	</div>

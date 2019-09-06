@@ -114,7 +114,7 @@ public class HeaderController {
 		}else {
 			mav.addObject("Login",true);
 			
-			mav.addObject("nakami",false);
+			mav.addObject("nakami",true);
 			List<MyPageEntity>list = mypagerepo.UserBuyItemList(session.getAttribute("loginUserId").toString());		
 			if(list.isEmpty()) {
 				mav.addObject("nakami",false);
