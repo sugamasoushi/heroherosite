@@ -42,7 +42,7 @@ public class HeaderController {
 	private ItemListService service;
 	@RequestMapping(value="/itemlist",method=RequestMethod.GET)
 	public ModelAndView ItemList(ModelAndView mav) {
-		mav.setViewName("/index");
+		mav.setViewName("index");
 		mav.addObject("title","商品一覧");
 		mav.addObject("msg","ITEMLIST");
 
